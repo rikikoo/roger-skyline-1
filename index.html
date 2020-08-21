@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Shapes on Canvas</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+<body>
+    <canvas id="myCanvas" height="500" width="500"></canvas>
+    <script>
+{
+  // get canvas by id
+    // get canvas by id
+  const canvas = document.getElementById("myCanvas")
+  var frm1 = document.getElementById("frm1")
+ 
+  // overriding default width & height
+  canvas.width = 500
+  canvas.height = 500
+  
+  // get 2d context of our canvas
+  const ctx = canvas.getContext("2d")
+  
+  // optional step to fill color of rectangle to be created as default color is black
+  ctx.fillStyle = "tomato"
+  
+  // draw rectangle, and fill it with "tomato" color
+  // x = 10
+  // y = 20
+  // width = 200
+  // height = 300
+  ctx.fillRect(10, 20, 200, 300)
+  
+  // now change style to stroke instead of fill, and make sure it is green in color
+  ctx.strokeStyle = "green"
+  
+  // draw rectangle with "green" color stroke (no fill)
+  // x = 100
+  // y = 100
+  // width = 200
+  // height = 100
+  ctx.strokeRect(150, 100, gsq_hght, gsq_wdth)
+  
+  // Step 1. Invoke path method
+  ctx.beginPath()
+  // Step 2. Creating a circular path
+  // x = 300
+  // y = 320
+  // start angle =  0
+  // end angle = 360 or 2*PI
+  ctx.arc(300, 320, 75, 0, 2*Math.PI)
+  
+  // Fill with Lavender color
+  ctx.fillStyle = "Lavender"
+  //Step 3. Now ink on canvas 
+  ctx.fill()
+  
+  ctx.beginPath();
+  // Point A
+  ctx.moveTo(350, 50);
+  // Point B
+  ctx.lineTo(400, 100);
+  ctx.strokeStyle = "DeepPink"
+  ctx.stroke();
+  
+  ctx.beginPath();
+  // Point A
+  ctx.moveTo(250, 250);
+  // Point B
+  ctx.lineTo(500, 400);
+  // Point C
+  ctx.lineTo(100, 25);
+  // Join C & A
+  ctx.closePath()
+
+  ctx.strokeStyle = "Navy"
+  ctx.stroke();
+}
+</script>
+<p>Enter height and width for the green rectangle, then click "Submit" to submit the form:</p>
+
+<form id="frm1" action="/action_page.php">
+  Height: <input type="text" name="hght"><br>
+  Width: <input type="text" name="wdth"><br><br>
+  <input type="button" onclick="myFunction()" value="Submit">
+</form>
+
+<script>
+function myFunction() {
+  document.getElementById("frm1").submit();
+}
+</script>
+
+</body>
+</html>
+
+
