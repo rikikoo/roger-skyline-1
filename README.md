@@ -44,7 +44,7 @@ Network -> Adapter 1 -> Attached to: Bridged Adapter
 
 ----
 
-Create a new machine with 1024 MB of RAM and 8 GB virtual disk.
+Create a new machine with 1024 MB of RAM and 8 GB virtual disk space.
 
 Start the machine and launch the installer. A GUI is not necessary.
 During disk partitioning, set up LVM and go with the default values it suggests. Resizing a partition later with `cfdisk` is very simple (at least if the most of the filesystem is mounted as Logical Volumes).
@@ -55,7 +55,7 @@ System and network configurations
 
 ###### CREATING A NON-ROOT USER WITH SUDO RIGHTS
 1. Switch to **root** with command `su -` (and typing the root pw when prompted)
-2. Create user **faff** (my favorite English word at the time...) with command `adduser faff`
+2. Create user **faff** (an English word that rang true to me at the time...) with command `adduser faff`
   * come up with a password for the new user, re-enter the password
   * rest of the prompted info is optional (skip 'em)
 3. Install `sudo` package in case it hasn't already been installed: `apt-get install sudo`
@@ -142,7 +142,7 @@ iface enp0s3 inet static
 ###### CONFIGURE SSH
 
 On the _host_ side, create an RSA key-pair with the command `ssh-keygen`.
-  - the keys should by default be created to `$HOME/.ssh/id_rsa`and `$HOME/.ssh/id_rsa.pub`.
+  - the keys should by default be created to `$HOME/.ssh/id_rsa` and `$HOME/.ssh/id_rsa.pub`.
 Upload the public key to the SSH server with the command `ssh-copy-id -i $HOME/.ssh/id_rsa.pub faff@192.168.56.2`.
   - test the connection: `ssh faff@192.168.56.2`.
 
